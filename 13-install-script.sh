@@ -24,3 +24,20 @@ else
     echo "httpd is already installed"
 fi
 
+dnf list installed nginx
+
+if [ $? -ne 0 ]
+then 
+    dnf install nginx -y 
+    if [ $? -ne 0 ]
+    then
+        echo "installing nginx is failed"
+        exit 1 
+    else 
+        echo "installing nginx is success"
+    fi
+else
+    echo "nginx is already installed"
+fi
+
+

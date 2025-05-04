@@ -12,7 +12,7 @@ dnf list installed httpd
 
 if [ $? -ne 0 ]
 then
-    dnf install httpd
+    dnf install httpd -y
     if [ $? -ne 0 ]
     then
         echo "installing httpd is failed"

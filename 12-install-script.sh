@@ -24,5 +24,5 @@ if [ $? -ne 0 ]
 then
     echo "installing git is failed"
 else
-    echo "installing mysql is success"
+    echo "installing git is success"
 fi

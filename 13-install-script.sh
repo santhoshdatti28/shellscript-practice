@@ -40,4 +40,20 @@ else
     echo "nginx is already installed"
 fi
 
+systemctl status nginx
+
+if [ $? -ne 0 ]
+then
+    systemctl start nginx
+    if [ $? -ne 0 ]
+    then
+        echo "starting of nginx is failed"
+        exit 1
+    else
+        then "starting of nginx is success"
+    fi 
+else
+    echo "nginx is already started"
+fi
+
 

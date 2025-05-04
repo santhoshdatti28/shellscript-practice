@@ -1,4 +1,4 @@
-MOVIES=("RRR","Devara","OG")
+MOVIES=("RRR" "Devara" "OG")
 
 echo "first name is: ${MOVIES[0]}"
 echo "second name is: ${MOVIES[1]}"

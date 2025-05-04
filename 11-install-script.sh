@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-if [ $? -ne 0 ]
+if [ $USERID -ne 0 ]
 then
     echo "you do not have access"
     exit 1

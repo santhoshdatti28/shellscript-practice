@@ -50,7 +50,7 @@ then
         echo "starting of nginx is failed"
         exit 1
     else
-        then "starting of nginx is success"
+        echo "starting of nginx is success"
     fi 
 else
     echo "nginx is already started"

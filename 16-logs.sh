@@ -15,10 +15,10 @@ LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
  VALIDATION(){
     if [ $1 -ne 0 ]
     then
-        echo "$2...failure"
+        echo -e  "$2...$R failure $N"
         exit 1
     else
-        echo "$2...success"
+        echo -e  "$2...$R success $N"
     fi
 
  }
@@ -32,7 +32,7 @@ then
     dnf install mysql -y &>>$LOG_FILE_NAME
     VALIDATION $? "installing mysql"
 else
-    echo "mysql is already installed"
+    echo -e "mysql is already $Y installed $N"
 fi 
 
 dnf list installed git 
@@ -42,5 +42,5 @@ then
     dnf install git -y &>>$LOG_FILE_NAME
     VALIDATION $? "installing git"
 else
-    echo "git is already installed"
+    echo -e "git is already $Y installed $N"
 fi

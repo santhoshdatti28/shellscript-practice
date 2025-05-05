@@ -27,6 +27,7 @@ CHECK_ROOT(){
     then 
         echo "ERROR: you do not have access"
         exit 1
+    fi
 }
 
 echo "scripted started and executed at: $TIMESTAMP" &>>$LOG_FILE_NAME

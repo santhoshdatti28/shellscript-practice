@@ -20,6 +20,7 @@ VALIDATION(){
         exit 1
     else
         echo "$2 is...$G success $N"
+    fi
 }
 
 dnf list installed mysql

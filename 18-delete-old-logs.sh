@@ -18,6 +18,7 @@ CHECK_ROOT(){
     if [ $USERID -ne 0 ]
     then 
         echo "Error: you do nothave access"
+        exit 1
     fi
 }
 

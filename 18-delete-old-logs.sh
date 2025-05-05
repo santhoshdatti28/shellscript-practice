@@ -29,3 +29,8 @@ mkdir -p /var/log/shellscript_logs
 echo "script started and executed at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 echo "files to delete: $FILES_TO_DELETE"
+
+while read -r file
+do
+    echo $file
+done <<<  $FILES_TO_DELETE

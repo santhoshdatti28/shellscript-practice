@@ -41,7 +41,7 @@ FILES=$(find /home/ec2-user/app-logs -name "*.log" -mtime +$DAYS)
 
 
 
-if [ -n $FILES ]
+if [ -n "$FILES" ]
 then
     echo "files to be: $FILES"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
@@ -53,7 +53,7 @@ then
         do
             echo "deleting file: $filepath"
             rm -rf $filepath
-            echo "deleted file: $filepath
+            echo "deleted file: $filepath"
         done <<< $FILES
     else
         echo -e "$R failed to create zip file $N"

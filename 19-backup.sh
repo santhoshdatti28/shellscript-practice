@@ -39,4 +39,26 @@ fi
 
 FILES=$(find /home/ec2-user/app-logs -name "*.log" -mtime +$DAYS)
 
-echo "files to be: $FILES"
+
+
+if [ -n $FILES ]
+then
+    echo "files to be: $FILES"
+    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
+    if [ -f $ZIP_FILE ]
+    then
+        echo -e "Successfully created zip file for files older than $DAYS"
+        while read -r filepath
+        do
+            echo "deleting file: $filepath"
+            rm -rf $filepath
+            echo "deleted file: $filepath
+        done <<< $FILES
+    else
+        echo -e "$R failed to create zip file"
+    fi
+else
+    echo "no files found to zip older than $DAYS"
+fi
+

@@ -56,7 +56,8 @@ then
             echo "deleted file: $filepath
         done <<< $FILES
     else
-        echo -e "$R failed to create zip file"
+        echo -e "$R failed to create zip file $N"
+        exit 1
     fi
 else
     echo "no files found to zip older than $DAYS"

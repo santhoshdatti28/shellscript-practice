@@ -7,6 +7,10 @@ MSG=""
 while read -r line
 do
     USAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
-    
-    echo "usage: $USAGE"
+    PARTITION=$(echo $line | awk -F " " '{print $NF}')
+    if [ $USAGE -gt $DISK_THRESHOLD_VALUE ]
+    then
+        MSG+="High Disk usage on partition: $PARTITION Usage is: $USAGE \n " 
 done <<< $DISK_USAGE
+
+echo "$MSG"
